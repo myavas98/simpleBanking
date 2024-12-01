@@ -1,3 +1,16 @@
+# Initial Setup
+Upon application startup, a default account with the following details will be created:
+Account Number: 669-7788
+Owner: Kerem Karaca
+# Important: Any other account numbers must be created before making transaction
+
+# 1. Create a New Account
+To create a new account, use the following request:
+
+curl -X POST http://localhost:8080/account/v1/create \
+     -H "Content-Type: application/json" \
+     -d '{"owner":"Mustafa Yavas","accountNumber":"123456"}'
+
 # Getting Started with Simple Banking (Estimated duration 1-3 hours)
 
 In this assignment you will build a banking service that can handle any number of transactions for bank accounts. The service is part of a larger collection of services that model the inner workings of a bank. The services for the "bank account" provide a simple model of how bank accounts might work in an overly simplified world.
