@@ -1,6 +1,22 @@
 package com.eteration.simplebanking.model;
 
+import javax.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
 
-// This class is a place holder you can change the complete implementation
-public class DepositTransaction  {
+@Entity
+@DiscriminatorValue("DepositTransaction")
+public class DepositTransaction extends Transaction {
+    
+    protected DepositTransaction() {
+        super(0.0);
+    }
+
+    public DepositTransaction(double amount) {
+        super(amount);
+    }
+
+    @Override
+    public void execute(Account account) {
+        account.credit(this.getAmount());
+    }
 }

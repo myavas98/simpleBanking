@@ -1,8 +1,24 @@
 package com.eteration.simplebanking.model;
 
+import javax.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
 
-// This class is a place holder you can change the complete implementation
-public class WithdrawalTransaction {
+@Entity
+@DiscriminatorValue("WithdrawalTransaction")
+public class WithdrawalTransaction extends Transaction {
+    
+    protected WithdrawalTransaction() {
+        super(0.0);
+    }
+
+    public WithdrawalTransaction(double amount) {
+        super(amount);
+    }
+
+    @Override
+    public void execute(Account account) throws InsufficientBalanceException {
+        account.debit(getAmount());
+    }
 }
 
 
