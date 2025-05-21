@@ -1,1 +1,3 @@
-rootProject.name = 'simplebanking'
+rootProject.name = 'simple-banking-parent' // Optional: rename root project
+include 'account-service'
+include 'transaction-service'
