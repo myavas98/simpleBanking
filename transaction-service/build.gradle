@@ -1,0 +1,28 @@
+plugins {
+  id 'org.springframework.boot' version '2.5.6'
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'java'
+}
+
+group = 'com.eteration.simplebanking' // Changed group
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'com.h2database:h2' // For H2 database
+  implementation 'org.springframework.kafka:spring-kafka' // Kafka dependency
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.junit.platform:junit-platform-launcher:1.9.2'
+  testImplementation('org.mockito:mockito-core')
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+test {
+  useJUnitPlatform()
+}
