@@ -13,25 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
-
-// A simple DTO for transaction status response, define if not already present
-class TransactionStatus {
-    private String status;
-    private String approvalCode;
-
-    public TransactionStatus(String status, String approvalCode) {
-        this.status = status;
-        this.approvalCode = approvalCode;
-    }
-    public TransactionStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-    public String getApprovalCode() { return approvalCode; }
-    public void setApprovalCode(String approvalCode) { this.approvalCode = approvalCode; }
-}
+import com.simplebanking.model.TransactionStatus;
 
 
 @Service
