@@ -1,7 +1,7 @@
 package com.simplebanking.model; // Corrected package
 
-import javax.persistence.Entity;
-import javax.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.DiscriminatorValue;
 
 @Entity
 @DiscriminatorValue("DepositTransaction")
